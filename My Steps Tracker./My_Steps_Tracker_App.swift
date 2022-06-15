@@ -11,7 +11,7 @@ import SwiftUI
 struct My_Steps_Tracker_App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavBarView()
         }
     }
 }
