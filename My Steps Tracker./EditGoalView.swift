@@ -9,9 +9,6 @@ import SwiftUI
 
 struct EditGoalView: View {
     var body: some View {
-        ZStack
-        VStack{
-        
         Text("Edit My Goal")
         .font(.largeTitle)
         .fontWeight(.bold)
