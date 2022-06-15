@@ -6,17 +6,22 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct NavBarView: View {
+    
+    // healthStore
+    
+    private var healthStore: HealthStore?
+    
+    init () {
+        healthStore = HealthStore()
+    }
 
     var body: some View {
+    
         
         TabView {
-//            HomeView()
-//                .tabItem {
-//                    Image(systemName:
-//                            "house")
-//                }
             PlantView()
                 .tabItem {
                     Image(systemName:
@@ -33,7 +38,16 @@ struct NavBarView: View {
                             "person")
                 }
         }
+        
+        .onAppear {
+            if let healthStore = healthStore {
+                healthStore.requestAuthorization {
+                    success in
+                }
+            }
+        }
     }
+    
 }
 
 struct NavBarView_Previews: PreviewProvider {

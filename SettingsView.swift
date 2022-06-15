@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
+        NavigationView {
         ZStack {
             VStack {
                 
@@ -33,11 +34,32 @@ struct SettingsView: View {
                             )
 
                                 .overlay(
+                                    VStack {
                                     Text("Edit Profile")
                                         .padding(.trailing, 160)
                                         .font(.title)
                                         .position(x:170, y: 50)
+                                    
+                                    NavigationLink(
+                                        destination:ProfileView()) {
+
+                                                Text("Edit Profile")
+                                                .font(.body)
+                                                .foregroundColor(Color.white)
+                                                .multilineTextAlignment(.center)
+                                                .frame(width: 150.0, height: 50.0)
+                                                .background(Color(UIColor(named:          "AccentColor")!))
+                                                .cornerRadius(15.0)
+                                                .padding(.bottom, 45)
+                                                .padding(.trailing, 150)
+//
+                              
+                                        }
+                                        
+                                    }
                                 )
+
+                                    
                 //Text
                 Text("General")
                     .font(.body)
@@ -114,10 +136,19 @@ struct SettingsView: View {
                         .padding(.leading, 25)
                         .frame(maxWidth:.infinity, alignment: .leading)
                 }
+                .padding(.bottom, 100)
         }
+        
     }
 }
+    }
 
+    
+    
+    
+    
+    
+    
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()

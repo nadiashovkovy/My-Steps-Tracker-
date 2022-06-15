@@ -6,13 +6,38 @@
 //
 
 import SwiftUI
+import HealthKit
+
+
+
+//
+//class StepsToday {
+//
+//    var healthStore: HKHealthStore?
+//    var steps = HealthStore.returnStepType
+//
+//    init() {
+//        if HKHealthStore.isHealthDataAvailable() {
+//            healthStore = HKHealthStore()
+//
+//        }
+//    }
+//
+//}
+
+
+
+
 
 
 struct PlantView: View {
+    
+    @State private var currentDate: String = ""
+    
     var body: some View {
         ZStack {
             VStack{
-            Text("My Plant")
+            Text("My Plant Step Tracker")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.leading, 25)
@@ -25,8 +50,10 @@ struct PlantView: View {
             .padding(.leading, 25)
             .padding(.bottom, 0)
             .frame(maxWidth:.infinity, alignment: .leading)
+                
+                
             //Curent date
-            Text("Tuesday, June 14")
+            Text(Date(), style: .date) 
             .font(.largeTitle)
             .fontWeight(.bold)
             .foregroundColor(Color(UIColor(named: "OutlineColor")!))
@@ -34,8 +61,10 @@ struct PlantView: View {
             .padding(.bottom, 0)
             .frame(maxWidth:.infinity, alignment: .leading)
                 
+                
+                
             //Insert Variable
-            Text("You are only 4,000 steps away from reaching your goal today!")
+            Text("You are only steps away from reaching your goal today!")
             .font(.body)
             .padding(.leading, 25)
             .padding(.bottom, 25)
@@ -43,7 +72,7 @@ struct PlantView: View {
 
             CircularProgressView(progress: 0.25)
                             .frame(width: 300, height: 300)
-            Text("60,000 / 10,000 steps")
+            Text("2,500 / 10,000 steps")
                     .font(.title)
                     .padding(.top, 25)
                 
@@ -77,6 +106,15 @@ struct CircularProgressView: View {
                     )
                 )
                 .rotationEffect(.degrees(-90))
+            
+            
+//                .overlay (
+//
+//
+//                     )
+            
+            
+            
         }
     }
 }

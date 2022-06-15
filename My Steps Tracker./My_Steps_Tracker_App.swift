@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct My_Steps_Tracker_App: App {
+    
     var body: some Scene {
         WindowGroup {
             NavBarView()
