@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B11A36D285A94C4000593E4 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11A36C285A94C4000593E4 /* Step.swift */; };
+		0B11A36F285ACF26000593E4 /* GoalsViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11A36E285ACF26000593E4 /* GoalsViewTest.swift */; };
 		0B4E5BA3285912CB002F0942 /* My_Steps_Tracker_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E5BA2285912CB002F0942 /* My_Steps_Tracker_App.swift */; };
 		0B4E5BA7285912CE002F0942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4E5BA6285912CE002F0942 /* Assets.xcassets */; };
 		0B4E5BAA285912CE002F0942 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4E5BA9285912CE002F0942 /* Preview Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B11A36C285A94C4000593E4 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		0B11A36E285ACF26000593E4 /* GoalsViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewTest.swift; sourceTree = "<group>"; };
 		0B4E5B9F285912CB002F0942 /* My Steps Tracker..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Steps Tracker..app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4E5BA2285912CB002F0942 /* My_Steps_Tracker_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Steps_Tracker_App.swift; sourceTree = "<group>"; };
 		0B4E5BA6285912CE002F0942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 		0B4E5B96285912CB002F0942 = {
 			isa = PBXGroup;
 			children = (
+				0B11A36E285ACF26000593E4 /* GoalsViewTest.swift */,
+				0B11A36C285A94C4000593E4 /* Step.swift */,
 				0B57CD68285A645400D144BE /* TestView.swift */,
 				0B4E5BA1285912CB002F0942 /* My Steps Tracker. */,
 				0B4E5BA0285912CB002F0942 /* Products */,
@@ -179,6 +185,8 @@
 				0B4E5BB828591460002F0942 /* GoalsView.swift in Sources */,
 				0B4E5BB628591452002F0942 /* PlantView.swift in Sources */,
 				0B57CD69285A645400D144BE /* TestView.swift in Sources */,
+				0B11A36D285A94C4000593E4 /* Step.swift in Sources */,
+				0B11A36F285ACF26000593E4 /* GoalsViewTest.swift in Sources */,
 				0B57CD44285A4DED00D144BE /* HealthStore.swift in Sources */,
 				0B4E5BA3285912CB002F0942 /* My_Steps_Tracker_App.swift in Sources */,
 			);

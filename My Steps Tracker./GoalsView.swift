@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GoalsView: View {
+    let stepGoal = 0
     var body: some View {
         NavigationView {
             
@@ -27,59 +28,78 @@ struct GoalsView: View {
                     .padding(.bottom, 0)
                     .frame(maxWidth:.infinity, alignment: .leading)
                 //Insert variable here
-                Text("3 Day Streak.")
+                Text("0 Day Streak.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(UIColor(named: "AccentColor")!))
+                    .foregroundColor(Color(UIColor(named: "OutlineColor")!))
                     .padding(.leading, 25)
                     .padding(.bottom, 25)
                     .frame(maxWidth:.infinity, alignment: .leading)
             
+                RoundedRectangle(cornerRadius: 25.0)
+                            .foregroundColor(Color(UIColor(named: "PrimaryColor")!))
+                            .frame(width: 350, height: 150)
+                            .shadow(color: Color.gray.opacity(0.2), radius: 10, x: 0, y: 7)
+                            .padding(.bottom, 25)
+                            .overlay(
+    HStack {
+        Image("Trophy-Guy")
+            .resizable()
+            .frame(width:120, height:130, alignment: .leading)
+            .padding(.bottom, 25)
+        VStack {
+                                    
+                Text("Current Goal :")
+                    .font(.title)
+                    .padding(.top, 10)
+                    .padding(.bottom, 25)
+                
+                        Text ("\(stepGoal) steps daily.")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(UIColor(named: "OutlineColor")!))
+                            .padding(.bottom, 25)
+                    
+        }
+    }
+)
+                
+                
+                
+                
                 
                 RoundedRectangle(cornerRadius: 25.0)
                             .foregroundColor(Color(UIColor(named: "PrimaryColor")!))
                             .frame(width: 350, height: 150)
                             .shadow(color: Color.gray.opacity(0.2), radius: 10, x: 0, y: 7)
+                            .padding(.bottom, 100)
                             .overlay(
                                 VStack {
                 Text("Edit Goal")
-                    .padding(.leading, 200)
+                    .padding(.trailing, 180)
                     .font(.title)
                     .position(x:170, y: 50)
                                     
                                     NavigationLink(
                                         destination:EditGoalView()) {
-
-                                                Text("Edit Profile")
+                                                Text("Edit Goal")
                                                 .font(.body)
                                                 .foregroundColor(Color.white)
                                                 .multilineTextAlignment(.center)
                                                 .frame(width: 150.0, height: 50.0)
                                                 .background(Color(UIColor(named:          "AccentColor")!))
                                                 .cornerRadius(15.0)
-                                                .padding(.bottom, 25)
-                                                .padding(.leading, 160)
-//
-                              
-                                        }
+                                                .padding(.bottom, 125)
+                                                .padding(.trailing, 150)
+                                            }
+                                        
             
                 
                                     
                                     
                     }
                 )
-                
-                RoundedRectangle(cornerRadius: 25.0)
-                            .foregroundColor(Color(UIColor(named: "PrimaryColor")!))
-                            .frame(width: 350, height: 250)
-                            .shadow(color: Color.gray.opacity(0.2), radius: 10, x: 0, y: 7)
-                            .padding(.bottom, 100)
-                            .overlay (
-                                Text("Past Progress : ")
-                                    .padding(.trailing, 125)
-                                    .font(.title)
-                                    .position(x:170, y: 50)
-                            )
+    
 
             }
             Image("Five-Stars-Thumb")
@@ -91,7 +111,7 @@ struct GoalsView: View {
             
             Image("Note-Taking")
                 .resizable()
-                .position(x:0, y:-50)
+                .position(x:180, y:175)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 130.0, height: 130.0)
                 .padding(.trailing, 50)
@@ -115,3 +135,4 @@ struct GoalsView_Previews: PreviewProvider {
         GoalsView()
     }
 }
+

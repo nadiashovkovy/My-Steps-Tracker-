@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditGoalView: View {
+    let stepGoal = 0
     var body: some View {
         ZStack {
             VStack {
@@ -30,6 +31,28 @@ struct EditGoalView: View {
                     .position(x:170, y: 50)
                 
                 )
+                        .overlay (
+                        Text ("\(stepGoal) steps daily.")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(UIColor(named: "OutlineColor")!))
+                            .padding(.top, 50)
+                        
+                        )
+                
+                Image(systemName: "square.and.pencil")
+                    .resizable()
+                    .foregroundColor(Color(UIColor(named: "OutlineColor")!))
+                    .frame(width: 20, height: 20, alignment: .trailing)
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
+                    .padding(.leading, 300)
+                Image("Trophy-Guy")
+                    .resizable()
+                    .frame(width:150, height:180, alignment: .center)
+                    .padding(.top, 25)
+                
+                
             }
         }
     }

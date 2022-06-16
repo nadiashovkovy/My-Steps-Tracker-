@@ -9,17 +9,7 @@ import SwiftUI
 import HealthKit
 
 struct NavBarView: View {
-    
-    // healthStore
-    
-    private var healthStore: HealthStore?
-    
-    init () {
-        healthStore = HealthStore()
-    }
-
     var body: some View {
-    
         
         TabView {
             PlantView()
@@ -38,14 +28,8 @@ struct NavBarView: View {
                             "person")
                 }
         }
+
         
-        .onAppear {
-            if let healthStore = healthStore {
-                healthStore.requestAuthorization {
-                    success in
-                }
-            }
-        }
     }
     
 }

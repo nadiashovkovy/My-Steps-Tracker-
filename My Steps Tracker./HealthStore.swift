@@ -19,7 +19,7 @@ class HealthStore {
         }
     }
     
-    func currentSteps(completion: @escaping (Bool) -> Void) {
+    func currentSteps(completion: @escaping (HKStatisticsCollection?) -> Void) {
         let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
         
         let now = Date()
@@ -29,11 +29,11 @@ class HealthStore {
             end: now,
             options: .strictStartDate)
         
-        let anchorDate = Date.monda()
+        let anchorDate = Date.now
         
         let daily = DateComponents(day: 1)
             
-        query = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: now, intervalComponents: daily)
+        query = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
         
         query!.initialResultsHandler = { query, statisticsCollection, error in
             completion(statisticsCollection)

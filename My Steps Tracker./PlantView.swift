@@ -9,41 +9,66 @@ import SwiftUI
 import HealthKit
 
 
-
-//
-//class StepsToday {
-//
-//    var healthStore: HKHealthStore?
-//    var steps = HealthStore.returnStepType
-//
-//    init() {
-//        if HKHealthStore.isHealthDataAvailable() {
-//            healthStore = HKHealthStore()
-//
-//        }
-//    }
-//
-//}
-
-
-
-
-
-
 struct PlantView: View {
     
-    @State private var currentDate: String = ""
+    
+    private var healthStore: HealthStore?
+    
+    @State private var steps: [Step] = [Step]()
+    
+    init () {
+        healthStore = HealthStore()
+    }
+
+    private func updateUIFromStatistics( statisticsCollection: HKStatisticsCollection) {
+        
+        let startDate = Date()
+        let endDate = Date()
+        
+        statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
+            
+            let count = statistics.sumQuantity()?.doubleValue(for: .count())
+            
+            let step = Step(count: Int(count ?? 0), date: statistics.startDate)
+            steps.append(step)
+            
+        }
+        
+    }
+
+    
     
     var body: some View {
+        
+        
+
         ZStack {
+            
             VStack{
+            
             Text("My Plant Step Tracker")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.leading, 25)
                     .padding(.bottom, 25)
                     .frame(maxWidth:.infinity, alignment: .leading)
+                
+                    .onAppear {
+                        if let healthStore = healthStore {
+                            healthStore.requestAuthorization {
+                                success in
+                                if success {
+                                    healthStore.currentSteps {
+                                        statisticsCollection in
+                                        if let statisticsCollection = statisticsCollection {
+                                            updateUIFromStatistics(statisticsCollection: statisticsCollection)
+                                        }
 
+                                    }
+                                }
+                            }
+                        }
+                    }
                 
             Text("Today is:")
             .font(.body)
@@ -62,25 +87,44 @@ struct PlantView: View {
             .frame(maxWidth:.infinity, alignment: .leading)
                 
                 
-                
-            //Insert Variable
-            Text("You are only steps away from reaching your goal today!")
-            .font(.body)
-            .padding(.leading, 25)
-            .padding(.bottom, 25)
-            .frame(maxWidth:.infinity, alignment: .leading)
-
-            CircularProgressView(progress: 0.25)
-                            .frame(width: 300, height: 300)
-            Text("2,500 / 10,000 steps")
-                    .font(.title)
-                    .padding(.top, 25)
-                
-        }
+                List (steps, id: \.id) { step in
+                let stepCount = step.count
+                let stepsLeft = 10000 - (stepCount)
+                let stepPercentage = Double(stepCount) / 10000.0
                     
+                    
+            Text("You are only \(stepsLeft) steps away from reaching your goal today!")
+            .font(.body)
+            .frame(maxWidth:.infinity, alignment: .center)
+            .padding(.top, 10)
+            .padding(.bottom, 10)
+                
+            
+
+            CircularProgressView(progress: stepPercentage)
+                            .frame(width: 300, height: 300)
+                            .padding(.top, 25)
+                            .padding(.bottom, 25)
+                
+
+            Text("\(stepCount) / 10,000 steps")
+                    .font(.title)
+                    .frame(maxWidth:.infinity, alignment: .center)
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
+                
+               
+                 
+                    
+            }
+            
+        }
+            
+            
+    }
 }
-}
-}
+
+
 
 
 
@@ -123,5 +167,6 @@ struct CircularProgressView: View {
 struct PlantView_Previews: PreviewProvider {
     static var previews: some View {
         PlantView()
+        }
     }
 }
