@@ -5,13 +5,19 @@
 //  Created by N. Shovkovy on 6/14/22.
 //
 
+
+
 import SwiftUI
+import Foundation
+
 
 struct GoalsView: View {
     
+
     @State var showPopup: Bool = false
-//
+
     @State var stepGoal = 10000
+    
 
     
     var body: some View {
@@ -32,7 +38,7 @@ struct GoalsView: View {
                     .padding(.leading, 25)
                     .padding(.bottom, 0)
                     .frame(maxWidth:.infinity, alignment: .leading)
-                //Insert variable here
+             
                 Text("0 Day Streak.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -59,7 +65,7 @@ struct GoalsView: View {
                     .padding(.top, 10)
                     .padding(.bottom, 25)
                 
-                        Text ("\(stepGoal) steps daily.")
+            Text ("\(stepGoal) steps daily.")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color(UIColor(named: "OutlineColor")!))
@@ -129,11 +135,12 @@ struct GoalsView: View {
     }
         .popupNavigationView(horizontalPadding: 40, show: $showPopup) {
             VStack {
-                
+    
             Text("Edit Goal :")
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(.bottom, 25)
+                .foregroundColor(Color(UIColor(named: "OutlineColor")!))
                 
                 TextField("Enter your new goal here", value: $stepGoal, formatter: NumberFormatter())
                     .keyboardType(.numberPad)
@@ -143,13 +150,25 @@ struct GoalsView: View {
                 .frame(width: 250, height: 25, alignment: .center)
                 .padding(.leading, 25)
                 .padding(.trailing, 25)
+            
                 
                 Text("steps per day.")
                     .font(.headline)
                     .padding(.top, 25)
-                    .padding(.bottom, 150)
+                    
                 
-
+                Button("SAVE") {
+                    withAnimation{showPopup.toggle()}
+                }
+                .font(.body)
+                .foregroundColor(.white)
+                .padding()
+                .padding(.trailing, 20)
+                .padding(.leading, 20)
+                .background(Color(UIColor(named:"AccentColor")!))
+                .cornerRadius(15.0)
+                .padding(.bottom, 150)
+                
             }
             
                 .toolbar{

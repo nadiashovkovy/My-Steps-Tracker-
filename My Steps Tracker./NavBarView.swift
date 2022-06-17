@@ -8,7 +8,11 @@
 import SwiftUI
 import HealthKit
 
+
 struct NavBarView: View {
+    
+
+    
     var body: some View {
         
         TabView {
@@ -29,7 +33,7 @@ struct NavBarView: View {
                 }
         }
 
-        
+        .accentColor(Color(UIColor(named: "OutlineColor")!))
     }
     
 }

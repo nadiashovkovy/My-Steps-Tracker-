@@ -20,20 +20,19 @@ class HealthStore {
     }
     
     func currentSteps(completion: @escaping (HKStatisticsCollection?) -> Void) {
+        
         let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
         
         let now = Date()
-        let startOfDay = Calendar.current.startOfDay(for: now)
-        let predicate = HKQuery.predicateForSamples(
-            withStart: startOfDay,
-            end: Date(),
-            options: .strictStartDate)
         
-//        let anchorDate = Date.now
+        let startOfDay = Calendar.current.startOfDay(for: now)
         
         let anchorDate = Calendar.current.startOfDay(for: now)
         
         let daily = DateComponents(day: 1)
+
+        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: Date(), options: .strictStartDate)
+        
             
         query = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
         

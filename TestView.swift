@@ -9,10 +9,10 @@
 //import HealthKit
 //
 //struct TestView: View {
-//    
-//    @State var plantImage
+//
 //
 //    private var healthStore: HealthStore?
+//    
 //    @State private var steps: [Step] = [Step]()
 //
 //    init () {
@@ -35,11 +35,11 @@
 //
 //
 //    var body: some View {
-//        
+//
 //        List (steps, id: \.id) { step in
 //
 //            let stepCount = step.count
-//            let plantImage = " "
+//
 //
 //            VStack {
 //                if step.count > 0 {
@@ -51,25 +51,8 @@
 //                Text(step.date, style: .date)
 //                    .opacity(0.5)
 //            }
-//            
-//            VStack {
 //
-//            if stepCount < (10000 / 3) {
-//                plantImage = "Sad-Plant"
-//            }
-//            else if stepCount >= (10000 / 3) && stepCount < ((10000 / 3) * 2) {
-//                plantImage = "Neutral-Plant"
-//            }
-//            else if stepCount >= ((10000 / 3) * 2) {
-//                plantImage = "Happy-Plant"
-//            }
-//        }
-//        
-//            VStack {
-//                Image(plantImage)
-//                    .frame(width: 250, height: 250, alignment: .center)
-//                
-//            }
+//
 //        }
 //        .onAppear {
 //            if let healthStore = healthStore {
@@ -87,7 +70,7 @@
 //                }
 //            }
 //        }
-//        
+//
 //  }
 //}
 //

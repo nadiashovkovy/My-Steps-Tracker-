@@ -35,7 +35,6 @@ struct ProfileView: View {
             .overlay(
                 
                 VStack {
-                    
                 TextField("First Name", text: $name)
                     .padding(.top, 250)
                     .padding(.leading, 25)
