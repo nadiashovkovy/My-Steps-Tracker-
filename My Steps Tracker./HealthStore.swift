@@ -26,10 +26,12 @@ class HealthStore {
         let startOfDay = Calendar.current.startOfDay(for: now)
         let predicate = HKQuery.predicateForSamples(
             withStart: startOfDay,
-            end: now,
+            end: Date(),
             options: .strictStartDate)
         
-        let anchorDate = Date.now
+//        let anchorDate = Date.now
+        
+        let anchorDate = Calendar.current.startOfDay(for: now)
         
         let daily = DateComponents(day: 1)
             

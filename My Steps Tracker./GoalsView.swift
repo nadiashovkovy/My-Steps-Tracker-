@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct GoalsView: View {
-    let stepGoal = 0
+    
+    @State var showPopup: Bool = false
+//
+    @State var stepGoal = 10000
+
+    
     var body: some View {
         NavigationView {
             
@@ -80,21 +85,22 @@ struct GoalsView: View {
                     .font(.title)
                     .position(x:170, y: 50)
                                     
-                                    NavigationLink(
-                                        destination:EditGoalView()) {
-                                                Text("Edit Goal")
-                                                .font(.body)
-                                                .foregroundColor(Color.white)
-                                                .multilineTextAlignment(.center)
-                                                .frame(width: 150.0, height: 50.0)
-                                                .background(Color(UIColor(named:          "AccentColor")!))
-                                                .cornerRadius(15.0)
-                                                .padding(.bottom, 125)
-                                                .padding(.trailing, 150)
-                                            }
-                                        
-            
-                
+                                    
+                                    
+                                    Button("Edit Goal") {
+                                        withAnimation {
+                                            showPopup.toggle()
+                                        }
+                                    }
+                                    .font(.body)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .padding(.trailing, 20)
+                                    .padding(.leading, 20)
+                                    .background(Color(UIColor(named:"AccentColor")!))
+                                    .cornerRadius(15.0)
+                                    .padding(.trailing, 150)
+                                    .padding(.bottom, 125)
                                     
                                     
                     }
@@ -121,9 +127,43 @@ struct GoalsView: View {
 
             
     }
-}
-    
-}
+        .popupNavigationView(horizontalPadding: 40, show: $showPopup) {
+            VStack {
+                
+            Text("Edit Goal :")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.bottom, 25)
+                
+                TextField("Enter your new goal here", value: $stepGoal, formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .padding()
+                .background(Color.gray.opacity(0.2).cornerRadius(15))
+                .font(.headline)
+                .frame(width: 250, height: 25, alignment: .center)
+                .padding(.leading, 25)
+                .padding(.trailing, 25)
+                
+                Text("steps per day.")
+                    .font(.headline)
+                    .padding(.top, 25)
+                    .padding(.bottom, 150)
+                
+
+            }
+            
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Close") {
+                            withAnimation{showPopup.toggle()}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 
 
 

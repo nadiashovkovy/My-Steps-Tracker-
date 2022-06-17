@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		0B11A36D285A94C4000593E4 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11A36C285A94C4000593E4 /* Step.swift */; };
 		0B11A36F285ACF26000593E4 /* GoalsViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11A36E285ACF26000593E4 /* GoalsViewTest.swift */; };
+		0B11A371285BF2D3000593E4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11A370285BF2D2000593E4 /* Extensions.swift */; };
 		0B4E5BA3285912CB002F0942 /* My_Steps_Tracker_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E5BA2285912CB002F0942 /* My_Steps_Tracker_App.swift */; };
 		0B4E5BA7285912CE002F0942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4E5BA6285912CE002F0942 /* Assets.xcassets */; };
 		0B4E5BAA285912CE002F0942 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4E5BA9285912CE002F0942 /* Preview Assets.xcassets */; };
 		0B4E5BB628591452002F0942 /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E5BB528591452002F0942 /* PlantView.swift */; };
 		0B4E5BB828591460002F0942 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E5BB728591460002F0942 /* GoalsView.swift */; };
-		0B4E5BBE28591489002F0942 /* EditGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E5BBD28591489002F0942 /* EditGoalView.swift */; };
 		0B4E5BC028591B7F002F0942 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4E5BBF28591B7F002F0942 /* NavBarView.swift */; };
 		0B57CD2628596F6A00D144BE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57CD2528596F6A00D144BE /* SettingsView.swift */; };
 		0B57CD42285A34CA00D144BE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57CD41285A34CA00D144BE /* ProfileView.swift */; };
@@ -26,13 +26,13 @@
 /* Begin PBXFileReference section */
 		0B11A36C285A94C4000593E4 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		0B11A36E285ACF26000593E4 /* GoalsViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewTest.swift; sourceTree = "<group>"; };
+		0B11A370285BF2D2000593E4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0B4E5B9F285912CB002F0942 /* My Steps Tracker..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Steps Tracker..app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4E5BA2285912CB002F0942 /* My_Steps_Tracker_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Steps_Tracker_App.swift; sourceTree = "<group>"; };
 		0B4E5BA6285912CE002F0942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B4E5BA9285912CE002F0942 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B4E5BB528591452002F0942 /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
 		0B4E5BB728591460002F0942 /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
-		0B4E5BBD28591489002F0942 /* EditGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGoalView.swift; sourceTree = "<group>"; };
 		0B4E5BBF28591B7F002F0942 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		0B57CD2528596F6A00D144BE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = ../SettingsView.swift; sourceTree = "<group>"; };
 		0B57CD41285A34CA00D144BE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = ../ProfileView.swift; sourceTree = "<group>"; };
@@ -57,6 +57,7 @@
 		0B4E5B96285912CB002F0942 = {
 			isa = PBXGroup;
 			children = (
+				0B11A370285BF2D2000593E4 /* Extensions.swift */,
 				0B11A36E285ACF26000593E4 /* GoalsViewTest.swift */,
 				0B11A36C285A94C4000593E4 /* Step.swift */,
 				0B57CD68285A645400D144BE /* TestView.swift */,
@@ -84,7 +85,6 @@
 				0B4E5BB528591452002F0942 /* PlantView.swift */,
 				0B4E5BB728591460002F0942 /* GoalsView.swift */,
 				0B57CD2528596F6A00D144BE /* SettingsView.swift */,
-				0B4E5BBD28591489002F0942 /* EditGoalView.swift */,
 				0B57CD41285A34CA00D144BE /* ProfileView.swift */,
 				0B4E5BA6285912CE002F0942 /* Assets.xcassets */,
 				0B4E5BA8285912CE002F0942 /* Preview Content */,
@@ -181,10 +181,10 @@
 				0B57CD42285A34CA00D144BE /* ProfileView.swift in Sources */,
 				0B57CD2628596F6A00D144BE /* SettingsView.swift in Sources */,
 				0B4E5BC028591B7F002F0942 /* NavBarView.swift in Sources */,
-				0B4E5BBE28591489002F0942 /* EditGoalView.swift in Sources */,
 				0B4E5BB828591460002F0942 /* GoalsView.swift in Sources */,
 				0B4E5BB628591452002F0942 /* PlantView.swift in Sources */,
 				0B57CD69285A645400D144BE /* TestView.swift in Sources */,
+				0B11A371285BF2D3000593E4 /* Extensions.swift in Sources */,
 				0B11A36D285A94C4000593E4 /* Step.swift in Sources */,
 				0B11A36F285ACF26000593E4 /* GoalsViewTest.swift in Sources */,
 				0B57CD44285A4DED00D144BE /* HealthStore.swift in Sources */,
